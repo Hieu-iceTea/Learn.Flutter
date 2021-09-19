@@ -1,6 +1,6 @@
 # codelab_startup_namer
 
-A new Flutter project. (Kotlin & Swift)
+A new Flutter project. (Java & Swift)
 
 ## Getting Started
 
