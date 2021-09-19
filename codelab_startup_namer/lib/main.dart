@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class RandomWords extends StatefulWidget {
   const RandomWords({Key? key}) : super(key: key);
 
@@ -47,14 +48,20 @@ class _RandomWordsState extends State<RandomWords> {
     //return Text(wordPair.asPascalCase);      // NEW
 
     final _suggestions = <WordPair>[];           // NEW
+    final _saved = <WordPair>{};     // NEW
     const _biggerFont = TextStyle(fontSize: 18); // NEW
 
     Widget _buildRow(WordPair pair) {
+      final alreadySaved = _saved.contains(pair);  // NEW
       return ListTile(
         title: Text(
           pair.asPascalCase,
           style: _biggerFont,
         ),
+        trailing: Icon(   // NEW from here...
+          alreadySaved ? Icons.favorite : Icons.favorite_border,
+          color: alreadySaved ? Colors.red : null,
+        ),                // ... to here.
       );
     }
 
