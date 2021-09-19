@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final wordPair = WordPair.random(); // Add this line.
-    return const MaterialApp(
+    return MaterialApp(
       /*title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
@@ -27,7 +27,11 @@ class MyApp extends StatelessWidget {
       ),*/
 
       title: 'Startup Name Generator',
-      home: RandomWords(),
+      theme: ThemeData(          // Add the 3 lines from here...
+        //primarySwatch: Colors.blueGrey,
+        primaryColor: Colors.white, //TODO: not working !?
+      ),                         // ... to here.
+      home: const RandomWords(),
     );
   }
 }
