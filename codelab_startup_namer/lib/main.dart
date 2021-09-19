@@ -40,8 +40,7 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
+
     //return Container();
 
     //final wordPair = WordPair.random();      // NEW
@@ -49,7 +48,7 @@ class _RandomWordsState extends State<RandomWords> {
 
     final _suggestions = <WordPair>[];           // NEW
     final _saved = <WordPair>{};     // NEW
-    const _biggerFont = TextStyle(fontSize: 18); // NEW
+    final _biggerFont = const TextStyle(fontSize: 18); // NEW
 
     Widget _buildRow(WordPair pair) {
       final alreadySaved = _saved.contains(pair);  // NEW
@@ -62,6 +61,15 @@ class _RandomWordsState extends State<RandomWords> {
           alreadySaved ? Icons.favorite : Icons.favorite_border,
           color: alreadySaved ? Colors.red : null,
         ),                // ... to here.
+        onTap: () {      // NEW lines from here...
+          setState(() {
+            if (alreadySaved) {
+              _saved.remove(pair);
+            } else {
+              _saved.add(pair);
+            }
+          });
+        },               // ... to here.
       );
     }
 
@@ -99,6 +107,8 @@ class _RandomWordsState extends State<RandomWords> {
       );
     }
 
+    @override
+    Widget build(BuildContext context) {
     return Scaffold (                     // Add from here...
       appBar: AppBar(
         title: const Text('Startup Name Generator'),
