@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'answer.dart';
-import 'question.dart';
+import 'quiz.dart';
+import 'result.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
     'What\'s your favorite language?',
   ];*/
 
-  var questions = [
+  final List<Map<String, Object>> _questions = [
     {
       'text': 'What\'s your favorite color?',
       'answers': ['Black', 'Red', 'Green', 'White'],
@@ -44,9 +44,9 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex = _questionIndex + 1;
 
-      if (_questionIndex == questions.length) {
+      /*if (_questionIndex == _questions.length) {
         _questionIndex = 0;
-      }
+      }*/
     });
   }
 
@@ -54,21 +54,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('My First App'),
-        ),
-        body: Column(
-          children: [
-            Question(
-              questions.elementAt(_questionIndex)['text'].toString(),
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ),
-      ),
+          appBar: AppBar(
+            title: const Text('My First App'),
+          ),
+          body: _questionIndex < _questions.length
+              ? Quiz(
+                  questions: _questions,
+                  questionIndex: _questionIndex,
+                  answerQuestion: _answerQuestion,
+                )
+              : const Result()),
     );
   }
 }
