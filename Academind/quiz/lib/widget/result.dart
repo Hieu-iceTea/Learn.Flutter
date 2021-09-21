@@ -12,6 +12,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      padding: const EdgeInsets.only(top: 50),
       child: Column(
         children: [
           Text(

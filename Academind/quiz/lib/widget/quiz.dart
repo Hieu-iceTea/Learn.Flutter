@@ -19,6 +19,7 @@ class Quiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.only(top: 10),
       child: Column(
         children: [
           LabelQuestion(questionTitle: questions.elementAt(index).title),
