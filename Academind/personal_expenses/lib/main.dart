@@ -38,7 +38,31 @@ class MyHomePage extends StatelessWidget {
           Column(
             children: [
               for (var transaction in transactions)
-                Card(child: Text(transaction.title)),
+                Card(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 15,
+                        ),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        )),
+                        padding: const EdgeInsets.all(10),
+                        child: Text(transaction.amount.toString()),
+                      ),
+                      Column(
+                        children: [
+                          Text(transaction.title),
+                          Text(transaction.date.toString()),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
             ],
           )
         ],
