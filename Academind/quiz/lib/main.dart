@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/model/question.dart';
+import 'package:quiz/widget/result.dart';
 
 import 'model/answer.dart';
 import 'widget/quiz.dart';
@@ -45,9 +46,18 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Title"),
+          title: Text("Quiz"),
         ),
-        body: Quiz(questions: questions, index: index, onPressed: onPressed),
+        body: index < questions.length
+            ? Quiz(
+                questions: questions,
+                index: index,
+                onPressed: onPressed,
+              )
+            : Result(
+                totalScore: totalScore,
+                onButtonResetPressed: onButtonResetPressed,
+              ),
       ),
     );
   }
@@ -55,9 +65,9 @@ class MyAppState extends State<MyApp> {
   void onPressed(int currentScore) {
     setState(() {
       index++;
-      if (index >= questions.length) {
+      /*if (index >= questions.length) {
         index = 0;
-      }
+      }*/
     });
 
     totalScore += currentScore;
@@ -65,5 +75,12 @@ class MyAppState extends State<MyApp> {
     print("index: $index");
     print("currentScore: $currentScore");
     print("totalScore: $totalScore");
+  }
+
+  void onButtonResetPressed() {
+    setState(() {
+      index = 0;
+      totalScore = 0;
+    });
   }
 }
