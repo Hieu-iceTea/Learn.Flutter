@@ -7,7 +7,7 @@ import 'label_question.dart';
 class Quiz extends StatelessWidget {
   List<Question> questions;
   int index;
-  final VoidCallback? onPressed;
+  final Function onPressed;
 
   Quiz(
       {required this.questions,

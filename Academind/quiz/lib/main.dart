@@ -38,6 +38,7 @@ class MyAppState extends State<MyApp> {
   ];
 
   int index = 0;
+  int totalScore = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +52,18 @@ class MyAppState extends State<MyApp> {
     );
   }
 
-  void onPressed() {
+  void onPressed(int currentScore) {
     setState(() {
-      index = index + 1;
+      index++;
       if (index >= questions.length) {
         index = 0;
       }
     });
 
+    totalScore += currentScore;
+
     print("index: $index");
+    print("currentScore: $currentScore");
+    print("totalScore: $totalScore");
   }
 }

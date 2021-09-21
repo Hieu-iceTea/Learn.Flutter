@@ -5,7 +5,7 @@ import 'button_answer.dart';
 
 class ButtonListAnswer extends StatelessWidget {
   List<Answer> answers;
-  final VoidCallback? onPressed;
+  final Function onPressed;
 
   ButtonListAnswer({required this.answers, required this.onPressed, Key? key})
       : super(key: key);
