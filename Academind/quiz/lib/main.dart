@@ -6,7 +6,16 @@ import 'widget/quiz.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
   List<Question> questions = [
     Question(title: "Question Title 1", answers: [
       Answer(title: "Answer Title A", score: 5),
@@ -43,8 +52,13 @@ class MyApp extends StatelessWidget {
   }
 
   void onPressed() {
-    index = index + 1;
+    setState(() {
+      index = index + 1;
+      if (index >= questions.length) {
+        index = 0;
+      }
+    });
+
     print("index: $index");
   }
-
 }
