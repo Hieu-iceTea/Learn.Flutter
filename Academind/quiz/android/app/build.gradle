@@ -57,6 +57,13 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    //Fix lỗi: ndk-bundle did not have a source.properties file
+    //https://stackoverflow.com/questions/64372383/ndk-at-library-android-sdk-ndk-bundle-did-not-have-a-source-properties-file
+    //https://www.youtube.com/watch?v=FuW3LTYK4Co
+    //https://www.youtube.com/watch?v=R14NnPxFyu0
+    ndkVersion '23.0.7599858'
+
 }
 
 flutter {
