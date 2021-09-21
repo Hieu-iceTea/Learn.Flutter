@@ -15,7 +15,8 @@ class Result extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Result: Total Score = $totalScore",
+            //"Result: Total Score = $totalScore",
+            getResultPhrase,
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 28),
           ),
@@ -26,5 +27,21 @@ class Result extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String get getResultPhrase {
+    String resultText = "Result: Total Score = $totalScore.\n";
+
+    if (totalScore <= 15) {
+      resultText += 'You are so bad!';
+    } else if (totalScore <= 30) {
+      resultText += 'You are ... strange?!';
+    } else if (totalScore <= 45) {
+      resultText += 'Pretty likeable!';
+    } else {
+      resultText += 'You are awesome and innocent!';
+    }
+
+    return resultText;
   }
 }
