@@ -18,23 +18,23 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   List<Question> questions = [
-    Question(title: "Question Title 1", answers: [
-      Answer(title: "Answer Title A", score: 5),
-      Answer(title: "Answer Title B", score: 10),
-      Answer(title: "Answer Title C", score: 15),
-      Answer(title: "Answer Title D", score: 20)
+    Question(title: "What\'s your favorite color?", answers: [
+      Answer(title: "Black", score: 5),
+      Answer(title: "Red", score: 10),
+      Answer(title: "Green", score: 15),
+      Answer(title: "White", score: 20)
     ]),
-    Question(title: "Question Title 2", answers: [
-      Answer(title: "Answer Title A", score: 5),
-      Answer(title: "Answer Title B", score: 10),
-      Answer(title: "Answer Title C", score: 15),
-      Answer(title: "Answer Title D", score: 20)
+    Question(title: "What\'s your favorite animal?", answers: [
+      Answer(title: "Rabbit", score: 5),
+      Answer(title: "Snake", score: 10),
+      Answer(title: "Elephant", score: 15),
+      Answer(title: "Lion", score: 20)
     ]),
-    Question(title: "Question Title 3", answers: [
-      Answer(title: "Answer Title A", score: 5),
-      Answer(title: "Answer Title B", score: 10),
-      Answer(title: "Answer Title C", score: 15),
-      Answer(title: "Answer Title D", score: 20)
+    Question(title: "Who\'s your favorite programming language?", answers: [
+      Answer(title: "Java", score: 5),
+      Answer(title: "PHP", score: 10),
+      Answer(title: "C#", score: 15),
+      Answer(title: "Dart", score: 20)
     ]),
   ];
 
