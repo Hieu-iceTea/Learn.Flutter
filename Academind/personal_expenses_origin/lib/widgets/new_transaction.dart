@@ -62,6 +62,7 @@ class _NewTransactionState extends State<NewTransaction> {
             top: 10,
             left: 10,
             right: 10,
+            //TODO: Để cải thiện thêm (hiển thị ô nhập liêu khi mở bản phím), hãy xem tại link sau và sửa tiếp: https://stackoverflow.com/a/57515977
             bottom: MediaQuery.of(context).viewInsets.bottom + 10,
           ),
           child: Column(
