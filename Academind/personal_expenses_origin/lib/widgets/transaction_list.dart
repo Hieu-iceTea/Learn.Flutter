@@ -12,7 +12,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      height: 550, //Theo bài giảng là 450, sửa thành 550 để phù hợp trên máy Xiaomi Mi 8
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
