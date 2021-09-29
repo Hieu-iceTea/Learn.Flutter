@@ -70,7 +70,9 @@ class Products with ChangeNotifier {
 
   void addProduct(Product product) {
     //const url = 'https://flutter-update.firebaseio.com/products.json';
-    var url = Uri.https('hieu-icetea-learn-flutter-shop-default-rtdb.asia-southeast1.firebasedatabase.app', '/products.json');
+    var url = Uri.https(
+        'hieu-icetea-learn-flutter-shop-default-rtdb.asia-southeast1.firebasedatabase.app',
+        '/products.json');
     http.post(
       url,
       body: json.encode({
