@@ -25,14 +25,13 @@ class Product with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> toggleFavoriteStatus() async {
+  Future<void> toggleFavoriteStatus(String token) async {
     final oldStatus = isFavorite;
     isFavorite = !isFavorite;
     notifyListeners();
-    //final url = 'https://flutter-update.firebaseio.com/products/$id.json';
-    var url = Uri.https(
-        'hieu-icetea-learn-flutter-shop-default-rtdb.asia-southeast1.firebasedatabase.app',
-        '/products/$id.json');
+    //final url = 'https://flutter-update.firebaseio.com/products/$id.json?auth=$token';
+    var url = Uri.parse(
+        'https://hieu-icetea-learn-flutter-shop-default-rtdb.asia-southeast1.firebasedatabase.app/products/$id.json?auth=$token');
     try {
       final response = await http.patch(
         url,

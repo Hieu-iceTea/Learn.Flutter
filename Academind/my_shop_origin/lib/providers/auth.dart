@@ -6,14 +6,27 @@ import 'package:http/http.dart' as http;
 import '../models/http_exception.dart';
 
 class Auth with ChangeNotifier {
-  late String _token;
-  late DateTime _expiryDate;
-  late String _userId;
+  String? _token;
+  DateTime? _expiryDate;
+  String? _userId;
+
+  bool get isAuth {
+    return token != null;
+  }
+
+  String? get token {
+    if (_expiryDate != null &&
+        _expiryDate!.isAfter(DateTime.now()) &&
+        _token != null) {
+      return _token;
+    }
+    return null;
+  }
 
   Future<void> _authenticate(
       String email, String password, String urlSegment) async {
-    //final url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/$urlSegment?key=[API_KEY]'; //signupNewUser | verifyPassword
-    //final url = 'https://identitytoolkit.googleapis.com/v1/accounts:$urlSegment?key=[API_KEY]'; //signUp | signInWithPassword
+    //final url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/$urlSegment?key=AIzaSyC13spCwP_f_SalxEbkB-wjedoF8iYENlQ'; //signupNewUser | verifyPassword
+    //final url = 'https://identitytoolkit.googleapis.com/v1/accounts:$urlSegment?key=AIzaSyCeROXnIO2X9CAr13vP-WIsbm6XADnNXk0'; //signUp | signInWithPassword
     final url = Uri.parse(
         'https://identitytoolkit.googleapis.com/v1/accounts:$urlSegment?key=AIzaSyCeROXnIO2X9CAr13vP-WIsbm6XADnNXk0'); //signUp | signInWithPassword
     try {
@@ -31,6 +44,16 @@ class Auth with ChangeNotifier {
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
       }
+      _token = responseData['idToken'];
+      _userId = responseData['localId'];
+      _expiryDate = DateTime.now().add(
+        Duration(
+          seconds: int.parse(
+            responseData['expiresIn'],
+          ),
+        ),
+      );
+      notifyListeners();
     } catch (error) {
       throw error;
     }
