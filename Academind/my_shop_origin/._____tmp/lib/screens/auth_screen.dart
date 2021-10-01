@@ -208,7 +208,6 @@ class _AuthCardState extends State<AuthCard> {
                     if (value.isEmpty || !value.contains('@')) {
                       return 'Invalid email!';
                     }
-                    return null;
                   },
                   onSaved: (value) {
                     _authData['email'] = value;
