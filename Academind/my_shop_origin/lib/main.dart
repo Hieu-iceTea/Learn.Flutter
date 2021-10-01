@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import './helpers/custom_route.dart';
 import './providers/auth.dart';
 import './providers/cart.dart';
 import './providers/orders.dart';
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => Auth(),
+        ChangeNotifierProvider.value(
+          value: Auth(),
         ),
         ChangeNotifierProxyProvider<Auth, Products>(
           create: (ctx) => Products(null, null, []),
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
             previousProducts == null ? [] : previousProducts.items,
           ),
         ),
-        ChangeNotifierProvider(
-          create: (_) => Cart(),
+        ChangeNotifierProvider.value(
+          value: Cart(),
         ),
         ChangeNotifierProxyProvider<Auth, Orders>(
           create: (ctx) => Orders(null, null, []),
@@ -51,6 +52,12 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.purple,
             accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
+            pageTransitionsTheme: PageTransitionsTheme(
+              builders: {
+                TargetPlatform.android: CustomPageTransitionBuilder(),
+                TargetPlatform.iOS: CustomPageTransitionBuilder(),
+              },
+            ),
           ),
           home: auth.isAuth
               ? ProductsOverviewScreen()
