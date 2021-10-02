@@ -9,6 +9,8 @@
    <application
         android:label="great_places_origin"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyAEOKVDLXnecFKBODj8itzVqXnZ2QS9WpM"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
