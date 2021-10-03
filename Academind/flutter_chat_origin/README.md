@@ -1,6 +1,6 @@
 # flutter_chat_origin
 
-A new Flutter project.
+A new Flutter project. Use Java.
 
 ## Getting Started
 
