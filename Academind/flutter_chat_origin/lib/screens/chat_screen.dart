@@ -12,6 +12,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
+    super.initState();
     final fbm = FirebaseMessaging();
     fbm.requestNotificationPermissions();
     fbm.configure(onMessage: (msg) {
@@ -25,7 +26,6 @@ class _ChatScreenState extends State<ChatScreen> {
       return;
     });
     fbm.subscribeToTopic('chat');
-    super.initState();
   }
 
   @override
@@ -35,6 +35,7 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text('FlutterChat'),
         actions: [
           DropdownButton(
+            underline: Container(),
             icon: Icon(
               Icons.more_vert,
               color: Theme.of(context).primaryIconTheme.color,
@@ -44,7 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: Container(
                   child: Row(
                     children: <Widget>[
-                      Icon(Icons.exit_to_app),
+                      Icon(Icons.exit_to_app, color: Colors.black54),
                       SizedBox(width: 8),
                       Text('Logout'),
                     ],
