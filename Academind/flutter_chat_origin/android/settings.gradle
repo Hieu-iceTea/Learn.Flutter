@@ -15,6 +15,7 @@ apply from: "$flutterSdkPath/packages/flutter_tools/gradle/app_plugin_loader.gra
 //Fix Lỗi (2 dòng sau khi chạy app):
 //Plugin project :cloud_firestore_web not found. Please update settings.gradle.
 //Plugin project :firebase_core_web not found. Please update settings.gradle.
+/*
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
 def plugins = new Properties()
 
@@ -27,4 +28,4 @@ plugins.each { name, path ->
     def pluginDirectory = flutterProjectRoot.resolve(path).resolve('android').toFile()
     include ":$name"
     project(":$name").projectDir = pluginDirectory
-}
+}*/
