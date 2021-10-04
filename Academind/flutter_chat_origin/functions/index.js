@@ -14,3 +14,7 @@ exports.myFunction = functions.firestore
         },
       });
     });
+
+
+//cd functions && npx eslint . --fix
+//https://stackoverflow.com/questions/68140196/how-to-fix-lint-problems-with-fix-in-firebase-functions
