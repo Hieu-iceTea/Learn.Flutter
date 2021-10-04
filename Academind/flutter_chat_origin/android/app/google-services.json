@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "528494383296",
-    "project_id": "hieu-icetea-learn-flutter-chat",
-    "storage_bucket": "hieu-icetea-learn-flutter-chat.appspot.com"
+    "project_number": "108584887064",
+    "project_id": "hieuit-demo-learn-flutter-chat",
+    "storage_bucket": "hieuit-demo-learn-flutter-chat.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:528494383296:android:87a1966e5e0edcfa411d25",
+        "mobilesdk_app_id": "1:108584887064:android:585e0bf305c6c85dd2f46d",
         "android_client_info": {
           "package_name": "com.hieu_icetea.flutter_chat_origin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "528494383296-trj29c4cdkrrp5ul3bm89scdofl4u0u4.apps.googleusercontent.com",
+          "client_id": "108584887064-psbqnfjb1cv4qhuqa26s2tdt6gbm5286.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDksaakxp3fX2MEBrhE_0bI3aqb1Gf67DM"
+          "current_key": "AIzaSyD3uBTVgT7lzcUkdEBHLxv7A6ktViH3Oh0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "528494383296-trj29c4cdkrrp5ul3bm89scdofl4u0u4.apps.googleusercontent.com",
+              "client_id": "108584887064-psbqnfjb1cv4qhuqa26s2tdt6gbm5286.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

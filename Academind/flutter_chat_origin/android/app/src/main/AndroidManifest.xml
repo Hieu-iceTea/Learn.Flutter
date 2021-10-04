@@ -42,7 +42,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-       <!--ADD THIS META DATA TAG IN YOUR CODE--> <!--https://stackoverflow.com/questions/48403786/how-to-open-particular-screen-on-clicking-on-push-notification-for-flutter-->
+        <!--ADD THIS META DATA TAG IN YOUR CODE--> <!--https://stackoverflow.com/questions/48403786/how-to-open-particular-screen-on-clicking-on-push-notification-for-flutter-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
