@@ -7,41 +7,33 @@ import 'package:flutter_complete_guide/widgets/chat/message_bubble.dart';
 class Messages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: FirebaseAuth.instance.currentUser(),
-      builder: (ctx, futureSnapshot) {
-        if (futureSnapshot.connectionState == ConnectionState.waiting) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
+        final user = FirebaseAuth.instance.currentUser;
         return StreamBuilder(
-            stream: Firestore.instance
+            stream: FirebaseFirestore.instance
                 .collection('chat')
                 .orderBy(
                   'createdAt',
                   descending: true,
                 )
                 .snapshots(),
-            builder: (ctx, chatSnapshot) {
+            builder: (ctx, AsyncSnapshot<QuerySnapshot> chatSnapshot) {
               if (chatSnapshot.connectionState == ConnectionState.waiting) {
                 return Center(
                   child: CircularProgressIndicator(),
                 );
               }
-              final chatDocs = chatSnapshot.data.documents;
+              final chatDocs = chatSnapshot.data.docs;
               return ListView.builder(
                 reverse: true,
                 itemCount: chatDocs.length,
                 itemBuilder: (ctx, index) => MessageBubble(
-                  chatDocs[index]['text'],
-                  chatDocs[index]['username'],
-                  chatDocs[index]['userImage'],
-                  chatDocs[index]['userId'] == futureSnapshot.data.uid,
-                  key: ValueKey(chatDocs[index].documentID),
+                  chatDocs[index].data()['text'],
+                  chatDocs[index].data()['username'],
+                  chatDocs[index].data()['userImage'],
+                  chatDocs[index].data()['userId'] == user.uid,
+                  key: ValueKey(chatDocs[index].id),
                 ),
               );
-            });
       },
     );
   }
