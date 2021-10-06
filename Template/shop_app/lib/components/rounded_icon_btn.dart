@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constants.dart';
 
 import '../size_config.dart';
 
 class RoundedIconBtn extends StatelessWidget {
   const RoundedIconBtn({
-    Key key,
-    @required this.icon,
-    @required this.press,
+    Key? key,
+    required this.icon,
+    required this.press,
     this.showShadow = false,
   }) : super(key: key);
 
@@ -30,10 +31,14 @@ class RoundedIconBtn extends StatelessWidget {
             ),
         ],
       ),
-      child: FlatButton(
-        padding: EdgeInsets.zero,
-        color: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          primary: kPrimaryColor,
+          backgroundColor: Colors.white,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+        ),
         onPressed: press,
         child: Icon(icon),
       ),
