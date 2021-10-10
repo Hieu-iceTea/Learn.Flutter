@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_map_picker_2">
        <meta-data
            android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyD1yiGZX0U5g_T_9vrHUFs7lH5fZStryZc" />
+           android:value="AIzaSyAvYWsESrn1bLJPYGHjUDrrenQ2vIXAft4" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

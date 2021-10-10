@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map_picker_code4func/location.dart';
 import 'package:flutter_map_picker_code4func/picker_page.dart';
 
+//https://www.youtube.com/watch?v=0heSAx5Bskw
+//https://github.com/thanhniencung/flutter-map-picker
+
+//Tham khảo thêm: (Các packages hỗ trợ tốt hơn)
+//https://pub.dev/packages/google_maps_place_picker/versions/2.1.0-nullsafety.3
+//https://pub.dev/packages/google_map_location_picker/example
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
