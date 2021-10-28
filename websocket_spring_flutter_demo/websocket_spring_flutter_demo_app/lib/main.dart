@@ -8,7 +8,7 @@ import 'package:stomp_dart_client/stomp_frame.dart';
 /// Nguồn tham khảo: https://umes4ever.medium.com/real-time-application-using-websocket-spring-boot-java-react-js-flutter-eb87fe95f94f
 
 // use this if you are using emulator. localhost is mapped to 10.0.2.2 by default.
-const socketUrl = 'http://192.168.1.106:8080/ws-message'; //192.168.1.106
+const socketUrl = 'http://192.168.1.106:8080/webSocket-message'; //192.168.1.106
 
 void main() {
   runApp(const MyApp());
