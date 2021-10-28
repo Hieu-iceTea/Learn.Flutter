@@ -11,15 +11,17 @@ import 'package:stomp_dart_client/stomp_frame.dart';
 const socketUrl = 'http://192.168.1.106:8080/ws-message'; //192.168.1.106
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final title = 'Websocket Demo';
-    return MaterialApp(
+    const title = 'WebSocket Demo';
+    return const MaterialApp(
       title: title,
       home: MyHomePage(title: title),
     );
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
