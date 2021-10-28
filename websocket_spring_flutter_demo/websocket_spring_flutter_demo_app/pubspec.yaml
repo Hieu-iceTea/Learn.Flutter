@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  stomp_dart_client: ^0.3.8
+  stomp_dart_client: ^0.4.3
 
 
   # The following adds the Cupertino Icons font to your application.
