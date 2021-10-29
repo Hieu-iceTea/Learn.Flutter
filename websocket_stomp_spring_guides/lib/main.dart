@@ -6,6 +6,8 @@ import 'package:stomp_dart_client/stomp.dart';
 import 'package:stomp_dart_client/stomp_config.dart';
 import 'package:stomp_dart_client/stomp_frame.dart';
 
+/// Chú ý: cần khởi đông dự án Spring của Hiếu khi chạy app Flutter này: https://github.com/Hieu-iceTea/FPT.Aptech.SEM4.Java/tree/main/Spring_Guide/websocket_stomp_spring_guides
+
 // use this if you are using emulator. localhost is mapped to 10.0.2.2 by default.
 const socketUrl = 'http://192.168.1.106:8080/websocket';
 
